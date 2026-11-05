@@ -5,11 +5,11 @@ import { detectors, toneVar } from "@/data/detectors";
 export function Simulator() {
   const [dose, setDose] = useState(60);
   const [det, setDet] = useState(0);
-  const d = detectors[det];
+  const d = detectors[det]!;
   const fid = useId().replace(/:/g, "");
 
   // Effective signal: film nu needs more dose; screen/CR/DR are more efficient.
-  const efficiency = [0.45, 0.85, 0.9, 1][det];
+  const efficiency = [0.45, 0.85, 0.9, 1][det]!;
   const signal = Math.min(1, (dose / 100) * efficiency * 1.4);
   const noise = Math.max(0, 1 - signal) * 0.9;
   const blur = det === 1 ? 2.2 : det === 2 ? 0.9 : 0;
