@@ -38,7 +38,7 @@ function useActiveSection() {
   return active;
 }
 
-const go = (i: number) => document.getElementById(sections[Math.max(0, Math.min(sections.length - 1, i))].id)?.scrollIntoView({ behavior: "smooth" });
+const go = (i: number) => document.getElementById(sections[Math.max(0, Math.min(sections.length - 1, i))]!.id)?.scrollIntoView({ behavior: "smooth" });
 
 export function SideNav() {
   const active = useActiveSection();

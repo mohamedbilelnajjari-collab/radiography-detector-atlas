@@ -23,7 +23,7 @@ export function Quiz() {
     );
   }
 
-  const q = quiz[i];
+  const q = quiz[i]!;
   return (
     <div className="glass mx-auto max-w-2xl p-6 md:p-10">
       <div className="mb-6 h-1 overflow-hidden rounded-full bg-muted">

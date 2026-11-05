@@ -112,13 +112,13 @@ function Timeline() {
         {open !== null && (
           <motion.div key={open} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="glass mt-10 grid gap-6 p-6 md:grid-cols-[1fr_2fr]">
             <div>
-              <p className={cn("text-xs uppercase tracking-[0.2em]", toneText[detectors[open].tone])}>{detectors[open].tech}</p>
-              <h3 className="mt-2 text-2xl font-bold">{detectors[open].name}</h3>
-              <div className="mt-4 flex flex-wrap gap-2">{detectors[open].badges.map((b) => <BadgeTag key={b.label} {...b} />)}</div>
+              <p className={cn("text-xs uppercase tracking-[0.2em]", toneText[detectors[open]!.tone])}>{detectors[open]!.tech}</p>
+              <h3 className="mt-2 text-2xl font-bold">{detectors[open]!.name}</h3>
+              <div className="mt-4 flex flex-wrap gap-2">{detectors[open]!.badges.map((b) => <BadgeTag key={b.label} {...b} />)}</div>
             </div>
             <div>
-              <p className="text-muted-foreground">{detectors[open].principle}</p>
-              <button onClick={() => scrollTo(`fiche-${detectors[open].id}`)} className="mt-4 text-sm text-primary">Lire la fiche complète →</button>
+              <p className="text-muted-foreground">{detectors[open]!.principle}</p>
+              <button onClick={() => scrollTo(`fiche-${detectors[open]!.id}`)} className="mt-4 text-sm text-primary">Lire la fiche complète →</button>
             </div>
           </motion.div>
         )}
